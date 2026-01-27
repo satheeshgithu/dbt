@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo
+    database: roles_test  
+    schema: dbt_testing  
+    tables:
+      - name: inventory
+      - name: customer
