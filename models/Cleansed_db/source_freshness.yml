@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: reporting_layer
+    database: raw_db
+    schema: staging
+    tables:
+      - name: order
+        loaded_at_field: O_ORDERDATE
+        freshness:
+          warn_after: {count: 1, period: day}  
+          error_after: {count: 3, period: day} 
+       
+

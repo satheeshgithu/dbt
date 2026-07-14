@@ -1,0 +1,1 @@
+select * from {{ source('reporting_layer', 'customer') }}

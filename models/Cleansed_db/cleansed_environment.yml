@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: reporting_layer
+    database: raw_db
+    schema: staging
+    tables:
+      - name: customer
+      - name: order
+      - name: nation
+      - name: region
