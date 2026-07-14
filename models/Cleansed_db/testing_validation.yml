@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_customer
     columns:
-      - name: C_CUSTKEY
+      - name: CUST_NO
         tests:
           - not_null
           - unique
@@ -13,6 +13,25 @@ models:
         tests:
           - not_null
           - unique
+      - name: CUST_NO
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customer')
+                field: CUST_NO
+  - name: stg_region
+    columns:
+      - name: REGION
+        tests:
+          - accepted_values:
+                arguments:
+                   values: 
+                     - africa
+                     - america
+                     - asia
+                     - europe
+                     - middle east
+        
           
           
 

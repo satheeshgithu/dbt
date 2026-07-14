@@ -11,7 +11,7 @@ with
     )
 
 select
-    c_custkey,
+    C.CUST_NO,
     c_name,
     c_address,
     c_nationkey,
@@ -20,7 +20,6 @@ select
     c_mktsegment,
     c_comment,
     o_orderkey,
-    o_custkey,
     o_orderstatus,
     o_totalprice,
     o_orderdate,
@@ -31,6 +30,6 @@ select
     nation,
     region
 from customer c
-left join orders o on c.c_custkey = o.o_custkey
+left join orders o on c.CUST_NO = o.CUST_NO
 left join nation n on c.c_nationkey = n.n_nationkey
 left join region r on n.n_regionkey = r.r_regionkey
