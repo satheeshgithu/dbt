@@ -1,14 +1,12 @@
 with
-    customer as (
- {{ref('stg_customer')}}
-    ),
-     orders as (
+    customer as ( select * from {{ ref('stg_customer') }}),
+     orders as ( select * from 
 {{ ref('stg_order') }}
     ),
-    nation as (
+    nation as ( select * from 
    {{ ref('stg_nation') }}
     ),
-    region as (
+    region as ( select * from 
 {{ ref('stg_region') }}
     )
 

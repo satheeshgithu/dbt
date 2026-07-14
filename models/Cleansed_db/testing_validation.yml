@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_customer
+    columns:
+      - name: C_CUSTKEY
+        tests:
+          - not_null
+          - unique
+  - name: stg_order
+    columns:
+      - name: O_ORDERKEY
+        tests:
+          - not_null
+          - unique
+          
+          
+
+        
