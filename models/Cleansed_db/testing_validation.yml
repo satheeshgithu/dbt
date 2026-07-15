@@ -2,26 +2,32 @@ version: 2
 
 models:
   - name: stg_customer
+    description: customer table we have customer details
     columns:
       - name: CUST_NO
         tests:
           - not_null
           - unique
   - name: stg_order
+    description: order table we have order details
     columns:
       - name: O_ORDERKEY
+        description: O_ORDERKEY is the primary key from order details
         tests:
           - not_null
           - unique
       - name: CUST_NO
+        description: customer id is the primary key in customer and frogin field in order table
         tests:
           - relationships:
               arguments:
                 to: ref('stg_customer')
                 field: CUST_NO
   - name: stg_region
+    description: region table we have region of state details
     columns:
       - name: REGION
+        description: "{{ doc('country_status') }}"
         tests:
           - accepted_values:
                 arguments:
