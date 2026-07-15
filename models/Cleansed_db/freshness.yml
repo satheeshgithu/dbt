@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: reporting1
+    database: RAW_DB
+    schema: STAGING
+
+    tables:
+      - name: order_c
+        config:
+          loaded_at_field: LAST_MODIFIED
+          freshness:
+            warn_after:
+              count: 6
+              period: day
+            error_after:
+              count: 14
+              period: day
